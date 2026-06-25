@@ -23,7 +23,7 @@ public interface ContactMapper {
     }
 
     static ContactResponse toDto(Contact contact){
-        ContactResponse response = new ContactResponse(
+        return new ContactResponse(
                 contact.getStreet(),
                 contact.getCity(),
                 contact.getCountry(),
@@ -32,6 +32,5 @@ public interface ContactMapper {
                 contact.getContactNo()
 
                 );
-        return response;
     }
 }
