@@ -27,8 +27,7 @@ public class ProductService {
     ProductRepository productRepository;
     @Autowired
     SupplierRepository supplierRepository;
-    @Autowired
-    InventoryRepository inventoryRepository;
+
     @Autowired
     InventoryService inventoryService;
 
@@ -43,9 +42,9 @@ public class ProductService {
         boolean isProductExist = false;
         Product savedProduct = null;
 
-        if(request.supplierRequest() != null) {
-            trn = request.supplierRequest().trn();
-            name = request.supplierRequest().name();
+        if(request != null) {
+            trn = request.trn();
+            name = request.supplierName();
         }
 
         if(trn != null) {
@@ -90,8 +89,7 @@ public class ProductService {
             savedProduct = productRepository.save(product);
 
         }
-        //if(savedProduct != null && supplier != null)
-            inventoryService.saveInventory(request, savedProduct, supplier);
+
         
         log.info("product saved successfully {}" , product.getProductId());
     }

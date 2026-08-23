@@ -19,6 +19,7 @@ public class Product {
     //Stock Keeping Unit
     private String skuCode;
     private String brand;
+    //unit_of_measure KG , BOX, PCS
     //category
     @CreatedDate
     private LocalDateTime createAt;

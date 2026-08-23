@@ -1,5 +1,5 @@
 package com.invertory.enums;
 
 public enum Role {
-    USER, ADMIN, SALES, PURCHASER, ACCOUNTANT
+    USER, ADMIN, SALES, PURCHASER, ACCOUNTANT,PURCHASE_MANAGER
 }

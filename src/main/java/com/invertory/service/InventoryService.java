@@ -23,9 +23,7 @@ public class InventoryService {
         Inventory inventory = InventoryMapper.toEntity(request);
         inventory.setProduct(product);
         inventory.setSupplier(supplier);
-        inventory.setQuantity(request.inventoryRequest().quantity());
-        inventory.setPurchasePrice(request.inventoryRequest().purchasePrice());
-        inventory.setSellingPrice(request.inventoryRequest().sellingPrice());
+
         Inventory savedInventory = inventoryRepository.save(inventory);
         log.info("Inventory saved successful {}", savedInventory.getInventoryId());
     }
